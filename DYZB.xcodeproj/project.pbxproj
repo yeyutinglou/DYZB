@@ -260,6 +260,7 @@
 			children = (
 				80A036E622213F4900CD0395 /* Recommend.storyboard */,
 				80A036FD222146CF00CD0395 /* RecommendViewController.swift */,
+				068F70C82224F64D002EA10F /* CategoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,7 +268,6 @@
 		80A036FB2221466D00CD0395 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				068F70C82224F64D002EA10F /* CategoryViewController.swift */,
 				0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */,
 				0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */,
 				068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */,
@@ -651,7 +651,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CH93287579;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -673,7 +673,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CH93287579;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
