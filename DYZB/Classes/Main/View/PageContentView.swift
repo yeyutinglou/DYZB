@@ -35,14 +35,14 @@ class PageContentView: UIView {
         flowLayout.scrollDirection = .horizontal
         
         //创建UICollectionView
-        let collectionView = UICollectionView(frame: (self?.bounds)!, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView .register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         
         return collectionView
     }()
@@ -75,6 +75,7 @@ extension PageContentView {
         
         //添加collectionView
         addSubview(collectionView)
+        collectionView.frame = self.bounds
     }
 }
 
@@ -95,7 +96,7 @@ extension PageContentView: UICollectionViewDataSource {
         
         let childVc = childVcs[indexPath.row]
         childVc.view.frame = cell.contentView.bounds
-        cell.contentView .addSubview(childVc.view)
+        cell.contentView.addSubview(childVc.view)
         
         
         return cell
@@ -107,7 +108,7 @@ extension PageContentView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension PageContentView: UICollectionViewDelegateFlowLayout {
     
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         startOffsetX = scrollView.contentOffset.x
         isForbidScrollDelegate = false
     }

@@ -12,6 +12,11 @@
 		066BA7FD21F6AE9600048F29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066BA7FC21F6AE9600048F29 /* Assets.xcassets */; };
 		066BA80B21F6AE9600048F29 /* DYZBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066BA80A21F6AE9600048F29 /* DYZBTests.swift */; };
 		066BA81621F6AE9600048F29 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066BA81521F6AE9600048F29 /* DYZBUITests.swift */; };
+		0684F2D7222502A700A2D21B /* CategoryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */; };
+		0684F2D8222502A700A2D21B /* CategoryCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */; };
+		068F70C92224F64D002EA10F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70C82224F64D002EA10F /* CategoryViewController.swift */; };
+		068F70CC2224FB94002EA10F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */; };
+		068F70CD2224FB94002EA10F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */; };
 		80A036E822213F4900CD0395 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036E622213F4900CD0395 /* Recommend.storyboard */; };
 		80A036EB22213FAE00CD0395 /* Entertainment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036E922213FAE00CD0395 /* Entertainment.storyboard */; };
 		80A036EE22213FDB00CD0395 /* Attention.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036EC22213FDB00CD0395 /* Attention.storyboard */; };
@@ -56,6 +61,11 @@
 		066BA81121F6AE9600048F29 /* DYZBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYZBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		066BA81521F6AE9600048F29 /* DYZBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYZBUITests.swift; sourceTree = "<group>"; };
 		066BA81721F6AE9600048F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionReusableView.swift; sourceTree = "<group>"; };
+		0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionReusableView.xib; sourceTree = "<group>"; };
+		068F70C82224F64D002EA10F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		80A036E722213F4900CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Recommend.storyboard; sourceTree = "<group>"; };
 		80A036EA22213FAE00CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Entertainment.storyboard; sourceTree = "<group>"; };
 		80A036ED22213FDB00CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Attention.storyboard; sourceTree = "<group>"; };
@@ -257,6 +267,11 @@
 		80A036FB2221466D00CD0395 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				068F70C82224F64D002EA10F /* CategoryViewController.swift */,
+				0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */,
+				0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */,
+				068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */,
+				068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +401,8 @@
 				80A036F122213FF300CD0395 /* Fish.storyboard in Resources */,
 				80A036EE22213FDB00CD0395 /* Attention.storyboard in Resources */,
 				80A036E822213F4900CD0395 /* Recommend.storyboard in Resources */,
+				0684F2D8222502A700A2D21B /* CategoryCollectionReusableView.xib in Resources */,
+				068F70CD2224FB94002EA10F /* CategoryCollectionViewCell.xib in Resources */,
 				80A036EB22213FAE00CD0395 /* Entertainment.storyboard in Resources */,
 				066BA7FD21F6AE9600048F29 /* Assets.xcassets in Resources */,
 				066BA7FB21F6AE9300048F29 /* Main.storyboard in Resources */,
@@ -413,13 +430,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068F70C92224F64D002EA10F /* CategoryViewController.swift in Sources */,
 				80A037012221491500CD0395 /* UIBarButtionItem-Extension.swift in Sources */,
 				066BA7F621F6AE9300048F29 /* AppDelegate.swift in Sources */,
+				0684F2D7222502A700A2D21B /* CategoryCollectionReusableView.swift in Sources */,
 				80A037032221545700CD0395 /* PageTitleView.swift in Sources */,
 				80A037092222445900CD0395 /* PageContentView.swift in Sources */,
 				80A0370D222248B900CD0395 /* UIColor-Extension.swift in Sources */,
 				80A0370B222246BB00CD0395 /* UIView-Extension.swift in Sources */,
 				80A036F62221426E00CD0395 /* MainViewController.swift in Sources */,
+				068F70CC2224FB94002EA10F /* CategoryCollectionViewCell.swift in Sources */,
 				80A037072221576B00CD0395 /* Common.swift in Sources */,
 				80A036FE222146CF00CD0395 /* RecommendViewController.swift in Sources */,
 			);
@@ -629,7 +649,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CH93287579;
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,6 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jyd.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -648,7 +671,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CH93287579;
 				INFOPLIST_FILE = DYZB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -657,6 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jyd.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
