@@ -14,6 +14,7 @@
 		066BA81621F6AE9600048F29 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066BA81521F6AE9600048F29 /* DYZBUITests.swift */; };
 		0684F2D7222502A700A2D21B /* CategoryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */; };
 		0684F2D8222502A700A2D21B /* CategoryCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */; };
+		0684F2DB2226637E00A2D21B /* PageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684F2DA2226637E00A2D21B /* PageCollectionView.swift */; };
 		068F70C92224F64D002EA10F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70C82224F64D002EA10F /* CategoryViewController.swift */; };
 		068F70CC2224FB94002EA10F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */; };
 		068F70CD2224FB94002EA10F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */; };
@@ -63,6 +64,7 @@
 		066BA81721F6AE9600048F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0684F2D5222502A700A2D21B /* CategoryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionReusableView.swift; sourceTree = "<group>"; };
 		0684F2D6222502A700A2D21B /* CategoryCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionReusableView.xib; sourceTree = "<group>"; };
+		0684F2DA2226637E00A2D21B /* PageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionView.swift; sourceTree = "<group>"; };
 		068F70C82224F64D002EA10F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -244,6 +246,7 @@
 			children = (
 				80A037022221545700CD0395 /* PageTitleView.swift */,
 				80A037082222445900CD0395 /* PageContentView.swift */,
+				0684F2DA2226637E00A2D21B /* PageCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				80A037092222445900CD0395 /* PageContentView.swift in Sources */,
 				80A0370D222248B900CD0395 /* UIColor-Extension.swift in Sources */,
 				80A0370B222246BB00CD0395 /* UIView-Extension.swift in Sources */,
+				0684F2DB2226637E00A2D21B /* PageCollectionView.swift in Sources */,
 				80A036F62221426E00CD0395 /* MainViewController.swift in Sources */,
 				068F70CC2224FB94002EA10F /* CategoryCollectionViewCell.swift in Sources */,
 				80A037072221576B00CD0395 /* Common.swift in Sources */,
