@@ -32,7 +32,7 @@
         <scene sceneID="hRb-pG-cFG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mY5-wk-uso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="推荐" id="mVB-0U-v8j"/>
+                    <tabBarItem key="tabBarItem" title="推荐" image="tabLive" selectedImage="tabLiveHL" id="mVB-0U-v8j"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k3H-vo-0Um">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -48,4 +48,8 @@
             <point key="canvasLocation" x="-50" y="-1004"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabLive" width="32" height="32"/>
+        <image name="tabLiveHL" width="32" height="32"/>
+    </resources>
 </document>

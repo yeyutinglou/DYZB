@@ -32,7 +32,7 @@
         <scene sceneID="Nxg-ng-5Z8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2m9-LC-PCm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="娱乐" id="jJP-Hz-7xc"/>
+                    <tabBarItem key="tabBarItem" title="娱乐" image="tabYule" selectedImage="tabYuleHL" id="jJP-Hz-7xc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0mx-6U-4kN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -48,4 +48,8 @@
             <point key="canvasLocation" x="-10" y="-263"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabYule" width="32" height="32"/>
+        <image name="tabYuleHL" width="32" height="32"/>
+    </resources>
 </document>

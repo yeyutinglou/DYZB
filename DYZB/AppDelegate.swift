@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.orange
+        UINavigationBar.appearance().setBackgroundImage(UIImage(color: UIColor.orange, size: CGSize(width: kNavigationH, height: kScreenW)), for: UIBarMetrics.default)
         return true
     }
 

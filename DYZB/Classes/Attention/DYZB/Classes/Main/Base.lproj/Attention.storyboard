@@ -32,7 +32,7 @@
         <scene sceneID="gAQ-Fj-1pg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qCt-RV-NhW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="关注" id="bIs-5p-bkw"/>
+                    <tabBarItem key="tabBarItem" title="关注" image="tabFocus" selectedImage="tabFocusHL" id="bIs-5p-bkw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q1e-N5-Vf7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -48,4 +48,8 @@
             <point key="canvasLocation" x="-50" y="516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabFocus" width="32" height="32"/>
+        <image name="tabFocusHL" width="32" height="32"/>
+    </resources>
 </document>

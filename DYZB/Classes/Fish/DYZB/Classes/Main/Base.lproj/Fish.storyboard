@@ -32,7 +32,7 @@
         <scene sceneID="8Bo-pR-dYU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TOj-Xm-lRw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="鱼吧" id="2UJ-IU-Xtj"/>
+                    <tabBarItem key="tabBarItem" title="鱼吧" image="tabYuba" selectedImage="tabYubaHL" id="2UJ-IU-Xtj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vER-G7-weP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -48,4 +48,8 @@
             <point key="canvasLocation" x="-50" y="1226"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabYuba" width="32" height="32"/>
+        <image name="tabYubaHL" width="32" height="32"/>
+    </resources>
 </document>

@@ -32,7 +32,7 @@
         <scene sceneID="RSL-Go-Q7J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eS9-vF-eIE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" id="86F-n4-SvV"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabDiscovery" selectedImage="tabDiscoveryHL" id="86F-n4-SvV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qv8-ti-LPv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -48,4 +48,8 @@
             <point key="canvasLocation" x="-50" y="2035"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabDiscovery" width="32" height="32"/>
+        <image name="tabDiscoveryHL" width="32" height="32"/>
+    </resources>
 </document>
