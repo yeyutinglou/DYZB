@@ -13,7 +13,8 @@ private let CollectionCellID = "CollectionCellID"
 private let CollectionHeaderID = "CollectionHeaderID"
 private let CollectionFooterID = "CollectionFooterID"
 private let kPageItemH = 60
-
+private let kItemMargin = 10
+private let kPageControlH = 20
 
 class CategoryViewController: BaseViewController {
 
@@ -105,9 +106,9 @@ extension CategoryViewController {
  // MARK: - 数据
 extension CategoryViewController {
     private func loadData() {
-        for _ in 0..<3 {
+        for _ in 0..<5 {
              var arr: [Int] = [Int]()
-            for j in 0..<Int(arc4random_uniform(40)){
+            for j in 0..<Int(arc4random_uniform(20)){
                 arr.append(j)
             }
             dataArr.append(arr)
@@ -170,10 +171,10 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout {
         var cellH = 0
         let items = dataArr[indexPath.section]
         if items.count > 12 {
-           cellH =  kPageItemH * 3 + 20
+           cellH =  kPageItemH * 3 + 2 * kItemMargin + kPageControlH + 20
         } else {
             let line = items.count % 4 == 0 ? items.count / 4 :  items.count / 4 + 1
-            cellH =  kPageItemH * line
+            cellH =  kPageItemH  * line + (line - 1) * kItemMargin + 20
         }
         return CGSize(width: kScreenW, height: CGFloat(cellH))
     }

@@ -22,19 +22,17 @@ class PageCollectionView: UIView {
     //sections  总页数
     private var pageCount = 0
    
-    
+    private let flowLayout: HorizontalCollectionFlowLayout
     
     
     
     
      // MARK: - 懒加载
     private lazy var collectionView: UICollectionView =  {
-        let flowLayout = HorizontalCollectionFlowLayout()
-        flowLayout.column = 4
-        flowLayout.line = 3
+        
        
-      
 
+        flowLayout.column = 4
         flowLayout.minimumLineSpacing = kItemMargin
         flowLayout.minimumInteritemSpacing = kItemMargin
         flowLayout.sectionInset = UIEdgeInsets(top: kItemMargin, left: kItemMargin, bottom: kItemMargin, right: kItemMargin)
@@ -73,7 +71,16 @@ class PageCollectionView: UIView {
      // MARK: - 构造方法
     init(frame: CGRect, category: [Int]) {
         self.category = category
-        
+        flowLayout = HorizontalCollectionFlowLayout()
+       
+        let count = category.count
+        var line = 0
+        if count >= kMaxNum {
+            line = 3
+        } else {
+            line = count % 4 == 0 ? count / 4  : count / 4 + 1
+        }
+        flowLayout.line = line
         super.init(frame: frame)
         
         setupUI()

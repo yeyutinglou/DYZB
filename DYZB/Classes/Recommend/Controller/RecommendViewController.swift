@@ -69,7 +69,7 @@ extension RecommendViewController {
         let left = UIBarButtonItem(imageName: "logo", highImageName: "logo", size: CGSize(width: 40, height: 40))
         navigationItem.leftBarButtonItem = left
         
-        let right = UIBarButtonItem(imageName: "history")
+        let right = UIBarButtonItem(imageName: "cm_nav_history")
         navigationItem.rightBarButtonItem = right
         
     }
