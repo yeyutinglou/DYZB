@@ -8,8 +8,8 @@
 
 import UIKit
 
-private let kItemMargin: CGFloat = 10
-private let kPageControlH: CGFloat = 20
+ let kCategoryItemMargin: CGFloat = 10
+ let kPageControlH: CGFloat = 40
 private let kMaxNum = 12
 private let kCollectionID = "kCollectionID"
 
@@ -33,9 +33,9 @@ class PageCollectionView: UIView {
        
 
         flowLayout.column = 4
-        flowLayout.minimumLineSpacing = kItemMargin
-        flowLayout.minimumInteritemSpacing = kItemMargin
-        flowLayout.sectionInset = UIEdgeInsets(top: kItemMargin, left: kItemMargin, bottom: kItemMargin, right: kItemMargin)
+        flowLayout.minimumLineSpacing = kCategoryItemMargin
+        flowLayout.minimumInteritemSpacing = kCategoryItemMargin
+//        flowLayout.sectionInset = UIEdgeInsets(top: kCategoryItemMargin, left: kCategoryItemMargin, bottom: kCategoryItemMargin, right: kCategoryItemMargin)
         flowLayout.scrollDirection = .horizontal
         
         
@@ -50,7 +50,8 @@ class PageCollectionView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionID)
+        
+        collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCollectionID)
         
         
         return collectionView
@@ -125,8 +126,8 @@ extension PageCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionID, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionID, for: indexPath) as! CategoryCollectionViewCell
+        
         return cell
     }
     

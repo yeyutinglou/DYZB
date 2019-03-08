@@ -12,9 +12,9 @@ import UIKit
 private let CollectionCellID = "CollectionCellID"
 private let CollectionHeaderID = "CollectionHeaderID"
 private let CollectionFooterID = "CollectionFooterID"
-private let kPageItemH = 60
-private let kItemMargin = 10
-private let kPageControlH = 20
+private let kPageItemH: CGFloat = 80
+//private let kItemMargin = 10
+//private let kPageControlH = 20
 
 class CategoryViewController: BaseViewController {
 
@@ -63,12 +63,7 @@ class CategoryViewController: BaseViewController {
         
     }()
     
-    private lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl.init()
-        pageControl.hidesForSinglePage = true
-        pageControl.frame = CGRect(origin: .zero, size: CGSize(width: kScreenW, height: 10))
-        return pageControl
-    }()
+
     
     
      // MARK: - 系统回调
@@ -92,15 +87,12 @@ extension CategoryViewController {
     private func setupUI() {
     
         self.view.addSubview(collectionView)
-//        self.view.addSubview(pageCollectionView)
+
         
         
     }
     
-    override func viewDidLayoutSubviews() {
-//        pageCollectionView.frame = self.view.bounds
-        
-    }
+
 }
 
  // MARK: - 数据
@@ -171,10 +163,10 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout {
         var cellH = 0
         let items = dataArr[indexPath.section]
         if items.count > 12 {
-           cellH =  kPageItemH * 3 + 2 * kItemMargin + kPageControlH + 20
+            cellH = 3 * Int(kPageItemH + kCategoryItemMargin)  + Int(kPageControlH)
         } else {
             let line = items.count % 4 == 0 ? items.count / 4 :  items.count / 4 + 1
-            cellH =  kPageItemH  * line + (line - 1) * kItemMargin + 20
+            cellH =  Int(kPageItemH + kCategoryItemMargin)  * line 
         }
         return CGSize(width: kScreenW, height: CGFloat(cellH))
     }

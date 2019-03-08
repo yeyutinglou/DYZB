@@ -32,17 +32,17 @@ extension BaseViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+       
         if scrollView.contentOffset.y <= 0  && startOffSetY == 0{
             return
         }
         
-        if startOffSetY > scrollView.contentOffset.y {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-
-        } else {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
+//        if startOffSetY > scrollView.contentOffset.y {
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
+//
+//        } else {
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        }
     }
 }
 

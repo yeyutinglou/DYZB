@@ -21,6 +21,11 @@
 		068F70C92224F64D002EA10F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70C82224F64D002EA10F /* CategoryViewController.swift */; };
 		068F70CC2224FB94002EA10F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */; };
 		068F70CD2224FB94002EA10F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */; };
+		06C8177A2230C20B00388ED7 /* ChildRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C817792230C20B00388ED7 /* ChildRecommendViewController.swift */; };
+		06C8177D2230C4AD00388ED7 /* NormalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8177B2230C4AD00388ED7 /* NormalCollectionCell.swift */; };
+		06C8177E2230C4AD00388ED7 /* NormalCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C8177C2230C4AD00388ED7 /* NormalCollectionCell.xib */; };
+		06C817802230D18600388ED7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8177F2230D18600388ED7 /* CircleView.swift */; };
+		06C817822230D19A00388ED7 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C817812230D19A00388ED7 /* CircleView.xib */; };
 		80A036E822213F4900CD0395 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036E622213F4900CD0395 /* Recommend.storyboard */; };
 		80A036EB22213FAE00CD0395 /* Entertainment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036E922213FAE00CD0395 /* Entertainment.storyboard */; };
 		80A036EE22213FDB00CD0395 /* Attention.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A036EC22213FDB00CD0395 /* Attention.storyboard */; };
@@ -74,6 +79,11 @@
 		068F70C82224F64D002EA10F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		068F70CA2224FB94002EA10F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		068F70CB2224FB94002EA10F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = DYZB/Classes/Recommend/View/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		06C817792230C20B00388ED7 /* ChildRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRecommendViewController.swift; sourceTree = "<group>"; };
+		06C8177B2230C4AD00388ED7 /* NormalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCollectionCell.swift; sourceTree = "<group>"; };
+		06C8177C2230C4AD00388ED7 /* NormalCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalCollectionCell.xib; sourceTree = "<group>"; };
+		06C8177F2230D18600388ED7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		06C817812230D19A00388ED7 /* CircleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		80A036E722213F4900CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Recommend.storyboard; sourceTree = "<group>"; };
 		80A036EA22213FAE00CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Entertainment.storyboard; sourceTree = "<group>"; };
 		80A036ED22213FDB00CD0395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Classes/Main/Base.lproj/Attention.storyboard; sourceTree = "<group>"; };
@@ -255,6 +265,10 @@
 				80A037022221545700CD0395 /* PageTitleView.swift */,
 				80A037082222445900CD0395 /* PageContentView.swift */,
 				0684F2DA2226637E00A2D21B /* PageCollectionView.swift */,
+				06C8177B2230C4AD00388ED7 /* NormalCollectionCell.swift */,
+				06C8177C2230C4AD00388ED7 /* NormalCollectionCell.xib */,
+				06C8177F2230D18600388ED7 /* CircleView.swift */,
+				06C817812230D19A00388ED7 /* CircleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +286,7 @@
 				80A036E622213F4900CD0395 /* Recommend.storyboard */,
 				80A036FD222146CF00CD0395 /* RecommendViewController.swift */,
 				068F70C82224F64D002EA10F /* CategoryViewController.swift */,
+				06C817792230C20B00388ED7 /* ChildRecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -412,11 +427,13 @@
 				80A036F42221402000CD0395 /* Discover.storyboard in Resources */,
 				80A036F122213FF300CD0395 /* Fish.storyboard in Resources */,
 				80A036EE22213FDB00CD0395 /* Attention.storyboard in Resources */,
+				06C817822230D19A00388ED7 /* CircleView.xib in Resources */,
 				80A036E822213F4900CD0395 /* Recommend.storyboard in Resources */,
 				0684F2D8222502A700A2D21B /* CategoryCollectionReusableView.xib in Resources */,
 				068F70CD2224FB94002EA10F /* CategoryCollectionViewCell.xib in Resources */,
 				80A036EB22213FAE00CD0395 /* Entertainment.storyboard in Resources */,
 				066BA7FD21F6AE9600048F29 /* Assets.xcassets in Resources */,
+				06C8177E2230C4AD00388ED7 /* NormalCollectionCell.xib in Resources */,
 				066BA7FB21F6AE9300048F29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,11 +461,14 @@
 			files = (
 				068F70C92224F64D002EA10F /* CategoryViewController.swift in Sources */,
 				80A037012221491500CD0395 /* UIBarButtionItem-Extension.swift in Sources */,
+				06C817802230D18600388ED7 /* CircleView.swift in Sources */,
 				066BA7F621F6AE9300048F29 /* AppDelegate.swift in Sources */,
 				0684F2D7222502A700A2D21B /* CategoryCollectionReusableView.swift in Sources */,
+				06C8177A2230C20B00388ED7 /* ChildRecommendViewController.swift in Sources */,
 				066411F5222948CC0082954A /* UIImage-Extension.swift in Sources */,
 				80A037032221545700CD0395 /* PageTitleView.swift in Sources */,
 				80A037092222445900CD0395 /* PageContentView.swift in Sources */,
+				06C8177D2230C4AD00388ED7 /* NormalCollectionCell.swift in Sources */,
 				80A0370D222248B900CD0395 /* UIColor-Extension.swift in Sources */,
 				0684F2E92228C3A600A2D21B /* HorizontalCollectionFlowLayout.swift in Sources */,
 				80A0370B222246BB00CD0395 /* UIView-Extension.swift in Sources */,

@@ -27,8 +27,8 @@ class RecommendViewController: UIViewController {
         //确定所有子控制器
         var childVcs = [UIViewController]()
         let category = CategoryViewController()
-
         childVcs.append(category)
+        childVcs.append(ChildRecommendViewController())
         for _ in 0..<3{
             let vc  = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
