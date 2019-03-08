@@ -22,7 +22,12 @@ private let kSelectColor: (CGFloat, CGFloat, CGFloat) = (249, 249, 249)
 class PageTitleView: UIView {
     
     // MARK: - 定义属性
-    private var titles: [String]
+    var titles: [String]!  {
+        didSet {
+            //  添加title对应的Label
+            setupTitleLabels()
+        }
+    }
     var currentIndex: Int = 0
     weak var delegate: PageTitleViewDelegate?
     
@@ -38,16 +43,11 @@ class PageTitleView: UIView {
     }()
     
 
-    // MARK: - 自定义构造函数
-    init(frame: CGRect, titles: [String]) {
-        self.titles = titles
-        
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
         //设置UI
         setupUI()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,21 +60,25 @@ extension PageTitleView {
     private func setupUI() {
         //添加scrollview
         addSubview(scrollView)
-        scrollView.frame = bounds
+
         
-        //  添加title对应的Label
-        setupTitleLabels()
         
-        //设置默认选中
-        setupFirstLabel()
+        
+        
+        //设置约束
+        setupConstraints()
+    }
+    
+    fileprivate func setupConstraints() {
+        scrollView.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+        }
     }
     
     private func setupTitleLabels() {
-        
+    
         //确定的位置
-        let labelW: CGFloat = frame.width / CGFloat(titles.count)
-        let labelH: CGFloat = frame.height
-        let labelY: CGFloat = 0
+        let labelW: CGFloat = kScreenW / CGFloat(titles.count)
         
         //循环创建
         for (index, title) in titles.enumerated() {
@@ -87,21 +91,26 @@ extension PageTitleView {
             label.textAlignment = .center
             label.tag = index
             
-            //动态位置
-            let labelX: CGFloat = labelW * CGFloat(index)
-            label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
-            
-            
             scrollView .addSubview(label)
             titleLabels .append(label)
+            
             
             //添加手势
             label.isUserInteractionEnabled = true
             let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(tapGes:)))
             label.addGestureRecognizer(tapGes)
             
+            //动态位置
+            let labelX: CGFloat = labelW * CGFloat(index)
+            label.snp.makeConstraints { (make) in
+                make.left.equalTo(labelX)
+                make.height.equalToSuperview()
+                make.width.equalTo(labelW)
+            }
+            //设置默认选中
+            setupFirstLabel()
         }
-    }
+ }
     
     
     private func setupFirstLabel() {

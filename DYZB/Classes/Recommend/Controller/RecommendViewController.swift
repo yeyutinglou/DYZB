@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
-private let kTitleViewH: CGFloat = 40
+private let kTitleViewH: CGFloat = 50
 
-class RecommendViewController: UIViewController {
+class RecommendViewController: BaseViewController {
 
     // MARK: - 懒加载
+
     private lazy var pageTitleView: PageTitleView = {[weak self] in
-        let titleFrame = CGRect(x: 0, y: kNavigationH, width: kScreenW, height: kTitleViewH)
-        let titles = ["分类", "推荐","全部","游戏",]
-        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+
+        let titles = ["分类", "推荐","全部","游戏"]
+
+        let titleView = PageTitleView()
+        titleView.titles = titles
         titleView.delegate = self
         titleView.backgroundColor = UIColor.orange
         return titleView
@@ -29,13 +33,13 @@ class RecommendViewController: UIViewController {
         let category = CategoryViewController()
         childVcs.append(category)
         childVcs.append(ChildRecommendViewController())
-        for _ in 0..<3{
+        for _ in 0..<2{
             let vc  = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
         }
         
-        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        let contentView = PageContentView(frame: .zero, childVcs: childVcs, parentViewController: self)
         contentView.delegate = self
         return contentView
     }()
@@ -43,9 +47,11 @@ class RecommendViewController: UIViewController {
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
+    
 
         //设置UI
-        setupUI()
+       
+       
     }
     
 
@@ -55,13 +61,40 @@ class RecommendViewController: UIViewController {
 
 // MARK: - 设置UI界面
 extension RecommendViewController {
-    private func setupUI () {
+    
+    
+     override func setupUI () {
+        super.setupUI()
         //设置导航栏
         setupNavigationBar()
         
         view.addSubview(pageTitleView)
-        
+
         view.addSubview(pageContentView)
+
+    
+        
+      
+    
+    }
+    
+    
+    override func setupConstraints() {
+        
+        super.setupConstraints()
+        
+        pageTitleView.snp.makeConstraints { make in
+            make.top.equalTo(kNavigationH)
+            make.left.right.equalTo(view)
+            make.height.equalTo(kPageControlH)
+        }
+        
+        pageContentView.snp.makeConstraints { (make) in
+            make.top.equalTo(pageTitleView.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(-kTabbarH)
+        }
+
     }
     
     private func setupNavigationBar(){

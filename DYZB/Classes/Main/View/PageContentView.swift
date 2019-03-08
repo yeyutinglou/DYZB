@@ -29,7 +29,7 @@ class PageContentView: UIView {
     private lazy var collectionView: UICollectionView = {[weak self] in
         //创建layOut
        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = (self?.bounds.size)!
+        flowLayout.itemSize = CGSize(width: kScreenW, height: kScreenH - kNavigationH - kTabbarH - 40)
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .horizontal
@@ -75,7 +75,11 @@ extension PageContentView {
         
         //添加collectionView
         addSubview(collectionView)
-        collectionView.frame = self.bounds
+        
+        collectionView.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+        }
+
     }
 }
 
@@ -95,8 +99,11 @@ extension PageContentView: UICollectionViewDataSource {
         }
         
         let childVc = childVcs[indexPath.row]
-        childVc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVc.view)
+       
+        childVc.view.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+        }
         
         
         return cell
@@ -122,7 +129,7 @@ extension PageContentView: UICollectionViewDelegateFlowLayout {
         var targetIndex: Int = 0
         
         let currentOffsetX = scrollView.contentOffset.x
-        let scrollViewW = scrollView.bounds.width
+        let scrollViewW = kScreenW
         
         if currentOffsetX > startOffsetX { //左滑
             //计算progress
@@ -166,7 +173,7 @@ extension PageContentView {
         
         isForbidScrollDelegate = true
         
-        let offSetX = CGFloat(currentIndex) * self.bounds.width
+        let offSetX = CGFloat(currentIndex) * kScreenW
         collectionView.setContentOffset(CGPoint(x: offSetX, y: 0), animated: false)
     }
 }

@@ -19,7 +19,7 @@ class CircleView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     fileprivate var layout: UICollectionViewFlowLayout!
     fileprivate var timer: Timer?
-    fileprivate var isTimer: Bool = true
+    
     
     override func awakeFromNib() {
         autoresizingMask = .init(rawValue: 0)
@@ -74,27 +74,23 @@ extension CircleView: UICollectionViewDataSource {
     
 }
 
- // MARK: - UICollectionViewDelegateFlowLayout协议
-extension CircleView: UICollectionViewDelegateFlowLayout {
+ // MARK: - UICollectionViewDelegate协议
+extension CircleView: UICollectionViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
          removeTimer()
-        isTimer = false
+    
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if isTimer {
-            return
-        }
         let offsetX = scrollView.contentOffset.x
-            pageControl.currentPage = Int(offsetX / collectionView.bounds.width) % kImageCount
+        
+        pageControl.currentPage = Int(offsetX / collectionView.bounds.width) % kImageCount
         
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-       addTimer()
-    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addTimer()
     }
     
 }
@@ -104,7 +100,7 @@ extension CircleView {
     func addTimer() {
         
         timer = Timer(timeInterval: 2, target: self, selector: #selector(scrollImage), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer!, forMode: .common)
+        RunLoop.main.add(timer!, forMode: .common)
         timer?.fire()
         
     }
@@ -124,7 +120,6 @@ extension CircleView {
         let offsetX = collectionView.contentOffset.x
        
         collectionView.setContentOffset(CGPoint(x: offsetX + kScreenW, y: 0), animated: true)
-        pageControl.currentPage = (pageControl.currentPage + 1) % kImageCount
     }
 }
 

@@ -16,28 +16,16 @@ private let kPageItemH: CGFloat = 80
 //private let kItemMargin = 10
 //private let kPageControlH = 20
 
-class CategoryViewController: BaseViewController {
+class CategoryViewController: UIViewController {
 
      // MARK: - 属性
     private var dataArr: [[Int]] =  [[Int]]()
     
     
      // MARK: - 懒加载
-//    private lazy var pageCollectionView: PageCollectionView = {
-//        var arr: [Int] = []
-//        for i in 0..<12 {
-//            arr.append(i)
-//        }
-//
-//        let pageView: PageCollectionView = PageCollectionView(frame: self.view.bounds, category: arr)
-//        pageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        return pageView
-//
-//
-//    }()
+
     private lazy var collectionView: UICollectionView =  {
         let flowLayout = UICollectionViewFlowLayout()
-//        flowLayout.itemSize = CGSize(width: kScreenW / 4, height:  kScreenW / 4)
         flowLayout.headerReferenceSize = CGSize(width: kScreenW, height: 40)
         flowLayout.footerReferenceSize = CGSize(width: kScreenW, height: 10)
         flowLayout.minimumLineSpacing = 0
@@ -86,7 +74,11 @@ class CategoryViewController: BaseViewController {
 extension CategoryViewController {
     private func setupUI() {
     
-        self.view.addSubview(collectionView)
+        view.addSubview(collectionView)
+        
+        collectionView.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+        }
 
         
         

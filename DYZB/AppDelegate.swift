@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().setBackgroundImage(UIImage(color: UIColor.orange, size: CGSize(width: kNavigationH, height: kScreenW)), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         return true
     }
 
