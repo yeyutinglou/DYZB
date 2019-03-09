@@ -11,26 +11,27 @@ import SnapKit
 
 private let kTitleViewH: CGFloat = 50
 
-class RecommendViewController: BaseViewController {
+class RecommendViewController: UIViewController {
 
-    // MARK: - 懒加载
-
-    private lazy var pageTitleView: PageTitleView = {[weak self] in
-
+    lazy var navigaitonView = CustomNavigationView()
+    
+    lazy var pageTitleView: PageTitleView = {[weak self] in
+        
         let titles = ["分类", "推荐","全部","游戏"]
-
+        
         let titleView = PageTitleView()
         titleView.titles = titles
         titleView.delegate = self
         titleView.backgroundColor = UIColor.orange
         return titleView
-    }()
+        }()
     
     private lazy var pageContentView: PageContentView = {[weak self] in
-        let contentFrame = CGRect(x: 0, y:kNavigationH + kTitleViewH, width: kScreenW, height: kScreenH - kNavigationH - kTitleViewH - kTabbarH)
+        //        let contentFrame = CGRect(x: 0, y:kNavigationH + kTitleViewH, width: kScreenW, height: kScreenH - kNavigationH - kTitleViewH - kTabbarH)
         //确定所有子控制器
         var childVcs = [UIViewController]()
         let category = CategoryViewController()
+        category.navigationView = navigaitonView
         childVcs.append(category)
         childVcs.append(ChildRecommendViewController())
         for _ in 0..<2{
@@ -42,8 +43,7 @@ class RecommendViewController: BaseViewController {
         let contentView = PageContentView(frame: .zero, childVcs: childVcs, parentViewController: self)
         contentView.delegate = self
         return contentView
-    }()
-    
+        }()
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +51,9 @@ class RecommendViewController: BaseViewController {
 
         //设置UI
        
+        setupUI()
+        setupConstraints()
+    
        
     }
     
@@ -63,10 +66,12 @@ class RecommendViewController: BaseViewController {
 extension RecommendViewController {
     
     
-     override func setupUI () {
-        super.setupUI()
+       func setupUI () {
+       
         //设置导航栏
         setupNavigationBar()
+        
+        view.addSubview(navigaitonView)
         
         view.addSubview(pageTitleView)
 
@@ -79,18 +84,21 @@ extension RecommendViewController {
     }
     
     
-    override func setupConstraints() {
+      func setupConstraints() {
         
-        super.setupConstraints()
+        navigaitonView.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(kNavigationH)
+        }
         
         pageTitleView.snp.makeConstraints { make in
-            make.top.equalTo(kNavigationH)
-            make.left.right.equalTo(view)
+            make.top.equalTo(navigaitonView.snp.bottom).offset(0)
+            make.left.right.equalToSuperview()
             make.height.equalTo(kPageControlH)
         }
         
         pageContentView.snp.makeConstraints { (make) in
-            make.top.equalTo(pageTitleView.snp.bottom)
+            make.top.equalTo(pageTitleView.snp.bottom).offset(0)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(-kTabbarH)
         }
@@ -124,3 +132,7 @@ extension RecommendViewController: PageContenViewDelegate {
         pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
+
+
+
+

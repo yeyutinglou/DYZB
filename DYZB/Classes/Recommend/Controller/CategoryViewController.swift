@@ -16,7 +16,7 @@ private let kPageItemH: CGFloat = 80
 //private let kItemMargin = 10
 //private let kPageControlH = 20
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: BaseViewController {
 
      // MARK: - 属性
     private var dataArr: [[Int]] =  [[Int]]()
@@ -60,7 +60,14 @@ class CategoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //UI
-        setupUI()
+//        setupUI()
+//
+//        setupConstraints()
+        
+         view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalTo(view)
+        }
         
         //数据
         loadData()
@@ -72,17 +79,26 @@ class CategoryViewController: UIViewController {
 
  // MARK: - UI
 extension CategoryViewController {
-    private func setupUI() {
     
-        view.addSubview(collectionView)
-        
-        collectionView.snp.makeConstraints { (make) in
-            make.top.left.right.bottom.equalToSuperview()
-        }
-
-        
-        
-    }
+//    override func setupUI() {
+//
+//
+//        super.setupUI()
+//    view.addSubview(collectionView)
+//
+//
+//
+//    }
+//
+//
+//    override func setupConstraints() {
+//
+//        super.setupConstraints()
+//        collectionView.snp.makeConstraints { (make) in
+//            make.top.equalTo(pageTitleView.snp.bottom).offset(0)
+//            make.left.right.bottom.equalToSuperview()
+//        }
+//    }
     
 
 }
@@ -136,7 +152,7 @@ extension CategoryViewController: UICollectionViewDataSource {
         for view in cell.contentView.subviews {
             view .removeFromSuperview()
         }
-        
+
         let category = dataArr[indexPath.section]
         let pageView = PageCollectionView(frame: cell.contentView.bounds, category: category)
         cell.contentView.addSubview(pageView)
@@ -162,6 +178,8 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: kScreenW, height: CGFloat(cellH))
     }
+    
+    
     
     
 }

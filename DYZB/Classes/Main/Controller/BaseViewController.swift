@@ -13,31 +13,15 @@ class BaseViewController: UIViewController {
      // MARK: - 属性
     var startOffSetY:CGFloat = 0
     
+    var navigationView: CustomNavigationView?
+    
+    
+   
     
     // MARK: - 懒加载
-    lazy var navigationView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.orange
-        return view
-    }()
     
-    lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "logo"))
-        return imageView
-    }()
-    
-    lazy var textFiled: UITextField = {
-        let textFiled = UITextField()
-        textFiled.placeholder = "🔍"
-        textFiled.borderStyle = .roundedRect
-        return textFiled
-    }()
-    
-    lazy var historyBtn: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(named: "cm_nav_history"), for: .normal)
-        return btn
-    }()
+   
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +29,10 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
       
         navigationController?.setNavigationBarHidden(true, animated: true)
-        setupUI()
-        setupConstraints()
-      
+//        navigationController?.barTintColor = UIColor.orange
+//        setupUI()
+//        setupConstraints()
+    
     }
     
 
@@ -55,51 +40,12 @@ class BaseViewController: UIViewController {
 
 
 
-extension BaseViewController {
-    @objc func setupUI() {
-        view.addSubview(navigationView)
-        
-        navigationView.addSubview(logoImageView)
-        
-        navigationView.addSubview(textFiled)
-        
-        navigationView.addSubview(historyBtn)
-        
-    }
-    
-    @objc func setupConstraints() {
-        navigationView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(kNavigationH)
-        }
-        
-        let margin: CGFloat = 20
-        let height: CGFloat = 30
-        let width: CGFloat = 40
-        
-        
-        
-        logoImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(navigationView.snp.left).offset(margin)
-            make.top.equalTo(navigationView.snp.top).offset(kStatusH)
-            make.size.equalTo(CGSize(width: width, height: height))
-        }
-        
-        historyBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(navigationView.snp.right).offset(-margin)
-            make.topMargin.equalTo(logoImageView)
-            make.size.equalTo(CGSize(width: height, height: height))
-        }
-        
-        textFiled.snp.makeConstraints { (make) in
-             make.topMargin.equalTo(logoImageView)
-            make.left.equalTo(logoImageView.snp.right).offset(margin)
-            make.right.equalTo(historyBtn.snp.left).offset(-margin)
-            make.height.equalTo(height)
-        }
-    }
-}
 
+
+
+
+
+// MARK: - UIScrollViewDelegate代理
 extension BaseViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         startOffSetY = scrollView.contentOffset.y
@@ -111,13 +57,25 @@ extension BaseViewController: UIScrollViewDelegate {
             return
         }
         
-//        if startOffSetY > scrollView.contentOffset.y {
-//            self.navigationController?.setNavigationBarHidden(false, animated: true)
-//
-//        } else {
-//            self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
+        if startOffSetY > scrollView.contentOffset.y {
+            navigationView!.snp.updateConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.height.equalTo(kNavigationH)
+            }
+           
+
+        } else {
+            navigationView!.snp.updateConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.height.equalTo(kStatusH)
+            }
+        }
+      
     }
+    
+  
+    
 }
+
 
 

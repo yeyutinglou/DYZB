@@ -24,12 +24,12 @@ class PageContentView: UIView {
     private var startOffsetX: CGFloat = 0
     private var isForbidScrollDelegate: Bool = false
     weak var delegate: PageContenViewDelegate?
-    
+    fileprivate let flowLayout = UICollectionViewFlowLayout()
     // MARK: - 懒加载
     private lazy var collectionView: UICollectionView = {[weak self] in
         //创建layOut
-       let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: kScreenW, height: kScreenH - kNavigationH - kTabbarH - 40)
+       
+       
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .horizontal
@@ -80,6 +80,10 @@ extension PageContentView {
             make.top.left.right.bottom.equalToSuperview()
         }
 
+    }
+    
+    override func layoutSubviews() {
+         flowLayout.itemSize = self.bounds.size
     }
 }
 
